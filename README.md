@@ -1,5 +1,11 @@
-# google-meet-mute-extension
+# Google Meet Mute Extension
 Extension for Google Meet to mute/unmute all open sessions
+
+## Install
+
+1. Go to "chrome://extensions" and click on "Load Unpacked" and select the project folder
+
+2. Go to "chrome://extensions/shortcuts" and in the installed "Google Meet Mute Control" extension, inform the shortcut keys.
 
 ## License
 
