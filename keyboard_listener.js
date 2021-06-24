@@ -22,13 +22,23 @@ chrome.commands.onCommand.addListener(command => {
         })
     }  else if (command === 'toggle_audio_all_tabs') {
         startStatusTabs = !startStatusTabs;
+        let tabCurrent = -1;
+        chrome.tabs.getSelected(null, tab => {
+            if (tab.audible) {
+                tabCurrent = tab.id;
+            }
+        });
         chrome.tabs.query({
             url: 'https://meet.google.com/*'}, tabs => {
                 tabs.forEach(tab => {
                     if (tab.audible) {
-                        chrome.tabs.update(tab.id, {muted: startStatusTabs});
+                        if (tabCurrent == tab.id && startStatusTabs) {
+                            chrome.tabs.update(tab.id, {muted: false});
+                        } else {
+                            chrome.tabs.update(tab.id, {muted: startStatusTabs});
+                        }
                     }
                 })
-        })
+        });
     }
 })
