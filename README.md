@@ -1,5 +1,5 @@
-# Google Meet Mute Extension
-Extension for Google Meet to mute/unmute all open sessions
+# Google Meet Mute Mic and Audio Extension
+Extension for Google Meet to mute/unmute mic and audio in all open sessions
 
 ## Install
 

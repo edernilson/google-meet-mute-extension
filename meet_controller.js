@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const unmuteButton = document.querySelector("[aria-label='Ativar microfone (ctrl + d)']")
 
     // function for muting
-    const mute = () => {
+    const muteMic = () => {
         const btn = muteButton
         if (btn !== null) {
             btn.click()
@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 
     // function for unmuting
-    const unmute = () => {
+    const unmuteMic = () => {
         const btn = unmuteButton
         if (btn !== null) {
             btn.click()
@@ -44,12 +44,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         }
     }
 
-    if (request.command === 'toggle') {
+    if (request.command === 'toggle_mic_all_tabs') {
         if (muteButton !== null) { // if the mute button exists, then the Mic is currently unmuted.
-            mute()
+            muteMic()
         }
         else { // … and vice-versa.
-            unmute()
+            unmuteMic()
         }
     }
 })

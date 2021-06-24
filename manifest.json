@@ -4,7 +4,7 @@
   "name": "Google Meet Mute Control",
   "short_name": "Meet Controls",
   "description": "Control your microphone manners for Meet",
-  "version": "0.1",
+  "version": "0.2",
   "icons": {
     "128": "notmuted.png"
   },
@@ -21,12 +21,20 @@
   },
   "permissions": ["tabs", "notifications"],
   "commands": {
-    "toggle": {
-      "description": "Toggle mute",
+    "toggle_mic_all_tabs": {
+      "description": "Toggle mic",
       "global": true,
       "suggested_key": {
         "default": "Alt+Shift+T",
         "mac": "MacCtrl+Shift+T"
+      }
+    },
+    "toggle_audio_all_tabs": {
+      "description": "Toggle audio",
+      "global": true,
+      "suggested_key": {
+        "default": "Alt+Shift+A",
+        "mac": "MacCtrl+Shift+A"
       }
     }
   }
